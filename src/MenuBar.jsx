@@ -1,3 +1,5 @@
+import { FiLayers } from "react-icons/fi";  
+
 export default function MenuBar() {
     return (
         <nav style={{
@@ -12,7 +14,22 @@ export default function MenuBar() {
             boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
             }}>
 
-            <h2 style={{ margin: 0, fontWeight: 600, letterSpacing: "0.5px" }}>
+            <h2
+                style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "0.6rem",
+                margin: 0,
+                color: "white",
+                textShadow: "0 0 4px rgba(255,255,255,0.4)",
+                }}
+            >
+                <FiLayers 
+                    size={24} 
+                    style={{
+                        filter: "drop-shadow(0 0 8px rgba(255,255,255,0.9))",
+                    }}
+                />
                 MinApp
             </h2>
 
@@ -45,7 +62,31 @@ export default function MenuBar() {
                     {item}
                 </li>
                 ))}
-            </ul>
+
+                <button 
+                style={{ 
+                    padding: "0.5rem 1.4rem",
+                    borderRadius: "20px",
+                    border: "none",
+                    backgroundColor: "rgb(255, 255, 255)",
+                    color: "#6069bd",
+                    fontSize: "1rem",
+                    cursor: "pointer",
+                    transition: "background-color 0.2s ease",
+                    fontWeight: 500,
+                    boxShadow: "0 5px 15px rgba(0,0,0,0.1)",
+                }}
+                onMouseEnter={(e) => { 
+                    e.target.style.backgroundColor = "rgba(255, 255, 255, 0.8)";
+                    e.target.style.color = "#6069bd";
+                }}
+                onMouseLeave={(e) => { 
+                    e.target.style.backgroundColor = "rgba(255, 255, 255)"; 
+                    e.target.style.color = "#6069bd";
+                }}>
+                Log ind
+            </button>
+            </ul>            
         </nav>
     );
 }
